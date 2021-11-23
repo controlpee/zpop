@@ -44,7 +44,9 @@ export const useStyles = makeStyles((theme)=> {
 
     // Wrapper
     wrapper: {
-        padding: theme.spacing(2, 2, 0, 32),
+        height: '100vh',
+        background: COLORS.lightGray1,
+        padding: theme.spacing(2, 2, 0, 34),
         [theme.breakpoints.down("sm")] : {
         padding: theme.spacing(2, 2)
         }
@@ -55,14 +57,18 @@ export const useStyles = makeStyles((theme)=> {
             color: COLORS.blue
         },
         " & div ":{
-        color: blueGrey["A400"]
+        color: blueGrey["A400"],
         }
     },
     activeNavlinks: {
         color: COLORS.blue,
         "& div" : {
         color:  blueGrey["A400"]
-        }
+        },
+    navButton: {
+        width: '100%',
+        textTransform: 'capitalize',
+    }
     }
     }
     

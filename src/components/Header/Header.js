@@ -1,23 +1,23 @@
 import React, {useState} from 'react'
 import {Routes, Route, Link } from 'react-router-dom'
-import Navbar from './Navbar';
-import Sidenav from './Sidenav';
+import Navbar from '../Navbar';
+import Sidenav from '../Sidenav';
 import Box from '@material-ui/core/Box'
 
-import Dashboard from '../../components/Dashboard';
-import Settings from '../../components/Settings'
-import Sell from '../../components/Sell';
-import SalesLedger from '../../components/SalesLedger';
-import Reporting from '../../components/Reporting'
-import Products from '../../components/Products';
-import Logout from '../../components/Logout';
-import Ecommerce from '../../components/Ecommerce'
-import Customers from '../../components/Customers'
+import Dashboard from '../../layouts/Dashboard';
+import Settings from '../../layouts/Settings'
+import Sell from '../../layouts/Sell';
+import SalesLedger from '../../layouts/SalesLedger';
+import Reporting from '../../layouts/Reporting'
+import Products from '../../layouts/Products';
+import Logout from '../../layouts/Logout';
+import Ecommerce from '../../layouts/Ecommerce'
+import Customers from '../../layouts/Customers'
 import {useStyles }from './HeaderStyle'
 
 const Header = () => {
     const [mobileOpen, setMobileOpen] = useState(false)
-
+    
     const handleDrawerOpen = () => {
         setMobileOpen(!mobileOpen);
     }
@@ -33,10 +33,9 @@ const classes = useStyles();
             <Sidenav mobileOpen={mobileOpen} 
             handleDrawerOpen={handleDrawerOpen} 
             handleDrawerClose={handleDrawerClose} />
-
             <Box className={classes.wrapper}>
             <Routes>
-                <Route exact path='/' render={(props) => <Dashboard />} />
+                {/* <Route exact path='/' render={(props) => <Dashboard />} /> */}
                 <Route exact path='/sell' render={(props) => <Sell/>} />
                 <Route exact path='/customers' render={(props) => <Customers />} />
                 <Route exact path='/ecommerce' render={(props) => <Ecommerce />} />
@@ -46,6 +45,7 @@ const classes = useStyles();
                 <Route exact path='/settings' render={(props) => <Settings/>} />
                 <Route exact path='/products' render={(props) => <Products />} />
             </Routes>
+
             </Box>
            
         </div>

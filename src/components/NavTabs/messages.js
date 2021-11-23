@@ -12,18 +12,19 @@ import MenuIcon from '@material-ui/icons/Menu'
 import {makeStyles} from '@material-ui/core/styles';
 import withStyles from '@material-ui/styles/withStyles';
 import Badge from '@material-ui/core/Badge';
-import NotificationsIcon from '@material-ui/icons/Notifications';
 import SettingsIcon from '@material-ui/icons/Settings';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
-import Avatar from "@material-ui/core/Avatar";
+import ForumIcon from '@material-ui/icons/Forum'
 
-import { FONTS, icons, COLORS, images, dummyData } from '../../../constants'
-import {useStyles} from '../HeaderStyle'
+import Avatar from '@material-ui/core/Avatar';
 
-const Profile = () => {
-const classes = useStyles
+import { FONTS, icons, COLORS, images, dummyData } from '../../constants'
+import { useStyles } from "../Header/HeaderStyle";
 
-    const [anchorEl, setAnchorEl] = useState(null);
+const Messages = () => {
+const classes = useStyles();
+
+const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -35,35 +36,44 @@ const classes = useStyles
   
     return(
         <Box>
-          <Button
-        aria-controls="simple-menu"
+          <IconButton
+        aria-controls="Message"
         aria-haspopup="true"
         onClick={handleClick}
-        startIcon={<Avatar src={images.avatar} className={classes.navAvatar}></Avatar>}
+        color="inherit"
       >
-      
-      </Button>
+      <Badge badgeContent={4} color="secondary">
+        <ForumIcon />
+      </Badge>
+      </IconButton>
       <Menu
-        id="simple-menu"
+        id="message"
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
       >
-          {dummyData.dropDownData.map((item, index) => {
+<List className={classes.navList}>
+{dummyData.dropDownNotice.map((item, index) => {
               return(
-<MenuItem key={index} component={ListItem} onClick={handleClose}>
-<ListItem>
-<ListItemIcon>{item.icon}</ListItemIcon>
-<ListItemText>{item.label}</ListItemText>
+<ListItem key={index}  onClick={handleClose}>
+<ListItemIcon>
+<Avatar className={classes.ulAvatar}>
+{item.label[0].toUpperCase()}
+</Avatar>
+    </ListItemIcon>
+<ListItemText
+ primary={item.label} 
+ secondary={item.desc}
+>
+</ListItemText>
 </ListItem>
-</MenuItem>
-
-              )
-          })}
+)
+})}
+</List>
       </Menu>
           </Box>
     )
 }
 
 
-export default Profile
+export default Messages

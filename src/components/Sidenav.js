@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Drawer, Hidden } from '@material-ui/core';
 import SidenavData from './SidenavData';
-import { useStyles } from './HeaderStyle';
+import { useStyles } from './Header/HeaderStyle';
 
 
 
@@ -20,7 +20,7 @@ classes={{
 variant="temporary"
 anchor={"left"}
 open={mobileOpen}
-onClose={handleDrawerClose}
+onClose={handleDrawerOpen}
 ModalProps={{
     keepMounted: true
 }}
@@ -46,7 +46,7 @@ classes={{
 variant="permanent"
 open
 >
-<SidenavData />
+<SidenavData handleDrawerClose={handleDrawerClose} />
 </Drawer>
 </Hidden>
 </nav>    )

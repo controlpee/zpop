@@ -14,14 +14,13 @@ import withStyles from '@material-ui/styles/withStyles';
 import Badge from '@material-ui/core/Badge';
 import SettingsIcon from '@material-ui/icons/Settings';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
-import ForumIcon from '@material-ui/icons/Forum'
-
 import Avatar from '@material-ui/core/Avatar';
 
-import { FONTS, icons, COLORS, images, dummyData } from '../../../constants'
-import { useStyles } from "../HeaderStyle";
+import { FONTS, icons, COLORS, images, dummyData } from '../../constants'
+import NotificationsActiveIcon from "@material-ui/icons/NotificationsActive";
+import { useStyles } from "../Header/HeaderStyle";
 
-const Messages = () => {
+const Notification = () => {
 const classes = useStyles();
 
 const [anchorEl, setAnchorEl] = useState(null);
@@ -37,17 +36,17 @@ const [anchorEl, setAnchorEl] = useState(null);
     return(
         <Box>
           <IconButton
-        aria-controls="Message"
+        aria-controls="Notification"
         aria-haspopup="true"
         onClick={handleClick}
         color="inherit"
       >
       <Badge badgeContent={4} color="secondary">
-        <ForumIcon />
+        <NotificationsActiveIcon />
       </Badge>
       </IconButton>
       <Menu
-        id="message"
+        id="notification"
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
@@ -61,10 +60,7 @@ const [anchorEl, setAnchorEl] = useState(null);
 {item.label[0].toUpperCase()}
 </Avatar>
     </ListItemIcon>
-<ListItemText
- primary={item.label} 
- secondary={item.desc}
->
+<ListItemText primary={item.label} secondary={item.desc}>
 </ListItemText>
 </ListItem>
 )
@@ -76,4 +72,4 @@ const [anchorEl, setAnchorEl] = useState(null);
 }
 
 
-export default Messages
+export default Notification

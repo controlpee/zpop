@@ -12,18 +12,18 @@ import MenuIcon from '@material-ui/icons/Menu'
 import {makeStyles} from '@material-ui/core/styles';
 import withStyles from '@material-ui/styles/withStyles';
 import Badge from '@material-ui/core/Badge';
+import NotificationsIcon from '@material-ui/icons/Notifications';
 import SettingsIcon from '@material-ui/icons/Settings';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
-import Avatar from '@material-ui/core/Avatar';
+import Avatar from "@material-ui/core/Avatar";
 
-import { FONTS, icons, COLORS, images, dummyData } from '../../../constants'
-import NotificationsActiveIcon from "@material-ui/icons/NotificationsActive";
-import { useStyles } from "../HeaderStyle";
+import { FONTS, icons, COLORS, images, dummyData } from '../../constants'
+import {useStyles} from '../Header/HeaderStyle'
 
-const Notification = () => {
-const classes = useStyles();
+const Profile = () => {
+const classes = useStyles
 
-const [anchorEl, setAnchorEl] = useState(null);
+    const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -35,41 +35,35 @@ const [anchorEl, setAnchorEl] = useState(null);
   
     return(
         <Box>
-          <IconButton
-        aria-controls="Notification"
+          <Button
+        aria-controls="simple-menu"
         aria-haspopup="true"
         onClick={handleClick}
-        color="inherit"
+        startIcon={<Avatar src={images.avatar} className={classes.navAvatar}></Avatar>}
       >
-      <Badge badgeContent={4} color="secondary">
-        <NotificationsActiveIcon />
-      </Badge>
-      </IconButton>
+      
+      </Button>
       <Menu
-        id="notification"
+        id="simple-menu"
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
       >
-<List className={classes.navList}>
-{dummyData.dropDownNotice.map((item, index) => {
+          {dummyData.dropDownData.map((item, index) => {
               return(
-<ListItem key={index}  onClick={handleClose}>
-<ListItemIcon>
-<Avatar className={classes.ulAvatar}>
-{item.label[0].toUpperCase()}
-</Avatar>
-    </ListItemIcon>
-<ListItemText primary={item.label} secondary={item.desc}>
-</ListItemText>
+<MenuItem key={index} component={ListItem} onClick={handleClose}>
+<ListItem>
+<ListItemIcon>{item.icon}</ListItemIcon>
+<ListItemText>{item.label}</ListItemText>
 </ListItem>
-)
-})}
-</List>
+</MenuItem>
+
+              )
+          })}
       </Menu>
           </Box>
     )
 }
 
 
-export default Notification
+export default Profile

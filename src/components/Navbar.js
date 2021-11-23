@@ -13,8 +13,8 @@ import Profile from './NavTabs/profile';
 import Notification from './NavTabs/notification';
 import Messages from './NavTabs/messages';
 
-import { useStyles } from './HeaderStyle';
-import { icons, images } from '../../constants';
+import { useStyles } from './Header/HeaderStyle';
+import { icons, images } from '../constants';
 
 
 
