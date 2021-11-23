@@ -1,12 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 
 
 
 const Customers = () => {
     return(
 <div>
-<p>Cutomers Woring</p>
+<p><h1>Cutomers Worikng</h1></p>
 </div>
     )
 }

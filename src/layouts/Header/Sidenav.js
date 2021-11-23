@@ -5,51 +5,46 @@ import { useStyles } from './HeaderStyle';
 
 
 
-const Sidenav = () => {
+const Sidenav = ({ mobileOpen, handleDrawerOpen, handleDrawerClose }) => {
 const classes = useStyles()
-const [mobileOpen, setMobileOpen] = useState(false)
 
-const handleDrawerOpen = () => {
-    setMobileOpen(!mobileOpen);
-}
 
     return(
 <nav className={classes.drawer} arial-label="mailbox folders">
-<Hidden smUp>
+<Hidden mdUp>
 <Drawer
 classes={{
   paper:  classes.drawerPaper
 }
 }
 variant="temporary"
-onClose={handleDrawerOpen}
 anchor={"left"}
 open={mobileOpen}
+onClose={handleDrawerClose}
 ModalProps={{
     keepMounted: true
 }}
 >
-<SidenavData />
+<SidenavData handleDrawerClose={handleDrawerClose} />
 </Drawer>
 </Hidden>
 <Hidden xsDown>
 <Drawer
 classes={{
-    paper: classes.drawerPaper
+    paper: classes.drawer
 }}
 variant="permanent"
-open={mobileOpen}
+open
 >
-
 </Drawer>
 </Hidden>
-<Hidden xsDown>
+<Hidden smDown>
 <Drawer
 classes={{
     paper: classes.drawerPaper
 }}
 variant="permanent"
-open={mobileOpen}
+open
 >
 <SidenavData />
 </Drawer>

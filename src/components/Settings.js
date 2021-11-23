@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Settings = () => {
     return(
 <div>
-<p>Settings Woring</p>
+<p><h1>Settings Working</h1></p>
 </div>
     )
 }

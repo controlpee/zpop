@@ -1,12 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 
 
 
 const Ecommerce = () => {
     return(
 <div>
-<p>Ecommerce Woring</p>
+<p><h1>Ecommerce Working</h1></p>
 </div>
     )
 }

@@ -19,7 +19,7 @@ import { icons, images } from '../../constants';
 
 
 
-const Navbar = () => {
+const Navbar = ({handleDrawerOpen}) => {
 const classes = useStyles();
 
 
@@ -37,7 +37,7 @@ const classes = useStyles();
           </Box>
           </Hidden>
           <Hidden mdUp>
-          <IconButton color="inherit" onClick={() => console.log("Menu")}>
+          <IconButton color="inherit" onClick={() => handleDrawerOpen()}>
             <MenuIcon />
           </IconButton>
           </Hidden>

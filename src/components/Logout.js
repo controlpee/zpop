@@ -1,12 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 
 
 
 const Logout = () => {
     return(
 <div>
-<p>Logout Woring</p>
+<p><h1>Logout Working</h1></p>
 </div>
     )
 }

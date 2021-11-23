@@ -1,3 +1,4 @@
+import { blueGrey } from "@material-ui/core/colors"
 import makeStyles from "@material-ui/core/styles/makeStyles"
 import { COLORS } from "../../constants"
 
@@ -33,11 +34,35 @@ export const useStyles = makeStyles((theme)=> {
     drawerPaper: {
         width: '250px',
         marginTop: '65px',
-        maxWidth: '600px'
+        [theme.breakpoints.down("sm")]: {
+            marginTop: '0px'
+        }
     },
-    drawer: {
-        display: 'flex',
-        
+    // drawer: {
+    //     display: 'flex',
+    // },
+
+    // Wrapper
+    wrapper: {
+        padding: theme.spacing(2, 2, 0, 32),
+        [theme.breakpoints.down("sm")] : {
+        padding: theme.spacing(2, 2)
+        }
+    },
+    navlinks: {
+        color: blueGrey["A400"],
+        "& :hover, & :hover div": {
+            color: COLORS.blue
+        },
+        " & div ":{
+        color: blueGrey["A400"]
+        }
+    },
+    activeNavlinks: {
+        color: COLORS.blue,
+        "& div" : {
+        color:  blueGrey["A400"]
+        }
     }
     }
     
