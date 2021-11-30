@@ -1,18 +1,30 @@
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
-import { CssBaseline } from '@material-ui/core';
 import './App.css';
-import Header from './components/Header/Header';
+import Header from './layouts/Header/Header';
+import {useStyles} from './layouts/Header/HeaderStyle'
+import Dashboard from './components/Dashboard';
+import Sell from './components/Sell';
+import Customers from './components/Customers';
+import Ecommerce from './components/Ecommerce';
+import Reporting from './components/Reporting';
+import SalesLedger from './components/SalesLedger';
+import Products from './components/Products';
+import Settings from './components/Settings'
 
+import Box from '@material-ui/core/Box';
 
 function App() {
 
+  const classes = useStyles()
+
   return (
-    <div >
-    <CssBaseline />
+    <main>
       <BrowserRouter>
-        <Header />
+      <Header />
+      
       </BrowserRouter>
-    </div>
+    </main>
+
   );
 }
 

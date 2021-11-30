@@ -19,7 +19,7 @@ import { icons, images } from '../constants';
 
 
 
-const Navbar = ({handleDrawerOpen}) => {
+export default function Navbar ({handleDrawerOpen}) {
 const classes = useStyles();
 
 
@@ -45,7 +45,3 @@ const classes = useStyles();
       </AppBar>
     )
 }
-
-
-
-export default Navbar;

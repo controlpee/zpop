@@ -5,7 +5,7 @@ import { useStyles } from './Header/HeaderStyle';
 
 
 
-const Sidenav = ({ mobileOpen, handleDrawerOpen, handleDrawerClose }) => {
+export default function Sidenav ({ mobileOpen, handleDrawerOpen, handleDrawerClose }) {
 const classes = useStyles()
 
 
@@ -49,8 +49,6 @@ open
 <SidenavData handleDrawerClose={handleDrawerClose} />
 </Drawer>
 </Hidden>
-</nav>    )
+</nav>    
+)
 }
-
-
-export default Sidenav;

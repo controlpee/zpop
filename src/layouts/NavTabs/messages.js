@@ -61,7 +61,7 @@ const [anchorEl, setAnchorEl] = useState(null);
 {item.label[0].toUpperCase()}
 </Avatar>
     </ListItemIcon>
-<ListItemText
+<ListItemText className={classes.msgItem}
  primary={item.label} 
  secondary={item.desc}
 >

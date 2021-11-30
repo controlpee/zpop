@@ -1,4 +1,4 @@
-import { blueGrey } from "@material-ui/core/colors"
+import { blueGrey, blue } from "@material-ui/core/colors"
 import makeStyles from "@material-ui/core/styles/makeStyles"
 import { COLORS } from "../../constants"
 
@@ -9,7 +9,7 @@ export const useStyles = makeStyles((theme)=> {
         display: 'flex',
         flexFlow: 'row wrap',
         justifyContent: 'space-between',
-        backgroundColor: COLORS.primary
+        background: COLORS.primary
       },
       
       logo: {
@@ -38,9 +38,9 @@ export const useStyles = makeStyles((theme)=> {
             marginTop: '0px'
         }
     },
-    // drawer: {
-    //     display: 'flex',
-    // },
+    drawer: {
+        display: 'flex',
+    },
 
     // Wrapper
     wrapper: {
@@ -52,6 +52,7 @@ export const useStyles = makeStyles((theme)=> {
         }
     },
     navlinks: {
+        display: 'flex',
         color: blueGrey["A400"],
         "& :hover, & :hover div": {
             color: COLORS.blue
@@ -60,7 +61,7 @@ export const useStyles = makeStyles((theme)=> {
         color: blueGrey["A400"],
         }
     },
-    activeNavlinks: {
+    activeNavLinks: {
         color: COLORS.blue,
         "& div" : {
         color:  blueGrey["A400"]
@@ -68,7 +69,10 @@ export const useStyles = makeStyles((theme)=> {
     navButton: {
         width: '100%',
         textTransform: 'capitalize',
-    }
+    },
+
+// Message
+ 
     }
     }
     
